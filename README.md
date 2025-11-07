@@ -38,7 +38,7 @@ This repository provides a script to migrate an existing Garuda Linux installati
 
 - Garuda Linux (Dr460nized or any other edition)
 - `sudo` privileges
-- `yay` (for AUR package installation) if KWin blur/rounded-corners effects are not in the official repos
+- `paru` (for AUR package installation) if KWin blur/rounded-corners effects are not in the official repos
 
 ## Notes
 
@@ -50,7 +50,7 @@ This repository provides a script to migrate an existing Garuda Linux installati
 
 - If a required file (e.g., a Kvantum config or Fastfetch config) is missing, the script will skip that step with a warning.
 - Make sure you have an active internet connection for package installations.
-- If you encounter errors related to missing packages (e.g., `kwin-effects-forceblur`), ensure `yay` is installed, or adjust the script to use a different AUR helper.
+- If you encounter errors related to missing packages (e.g., `kwin-effects-forceblur`), ensure `paru` is installed, or adjust the script to use a different AUR helper.
 
 ## License
 
