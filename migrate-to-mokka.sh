@@ -105,13 +105,13 @@ read -rp "Step 7/16: Install blur & rounded corners effects? [Y/n]: " confirm_ef
 if [[ ! "$confirm_effects" =~ ^[Nn]$ ]]; then
     echo "Attempting to install KWin blur/rounded-corners AUR packages..."
     # Prefer kwin-effects-forceblur if available; else fallback
-    if yay -Qs kwin-effects-forceblur > /dev/null 2>&1; then
+    if paru -Qs kwin-effects-forceblur > /dev/null 2>&1; then
         sudo pacman -S --noconfirm kwin-effects-forceblur \
           && echo "Installed 'kwin-effects-forceblur'." \
           || _err "Warning: Failed to install 'kwin-effects-forceblur'."
     else
         echo "  'kwin-effects-forceblur' not in repos; installing 'kwin-effects-blur-respect-rounded-decorations-git' from AUR"
-        yay -S --noconfirm kwin-effects-blur-respect-rounded-decorations-git \
+        paru -S --noconfirm kwin-effects-blur-respect-rounded-decorations-git \
           && echo "Installed 'kwin-effects-blur-respect-rounded-decorations-git'." \
           || _err "Warning: Failed to install 'kwin-effects-blur-respect-rounded-decorations-git'."
     fi
@@ -286,10 +286,10 @@ if [[ ! "$confirm_splash" =~ ^[Nn]$ ]]; then
     # 13b. Install Garuda plymouth theme (try repo or AUR)
     if pacman -Qs garuda-plymouth-theme > /dev/null 2>&1; then
         sudo pacman -S --noconfirm garuda-plymouth-theme
-    elif command -v yay > /dev/null 2>&1; then
-        yay -S --noconfirm garuda-plymouth-theme-git
+    elif command -v paru > /dev/null 2>&1; then
+        paru -S --noconfirm garuda-plymouth-theme-git
     else
-        echo "  Warning: 'garuda-plymouth-theme' not in repos and 'yay' not found; please install theme manually."
+        echo "  Warning: 'garuda-plymouth-theme' not in repos and 'paru' not found; please install theme manually."
     fi
 
     # 13c. Update mkinitcpio.conf to include plymouth hook
